@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu_items/menu_items.dart';
-import 'package:widget_app/presentation/screens/buttons/buttons_screen.dart';
 
-class HomeSreen extends StatelessWidget {
-  const HomeSreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +42,13 @@ class _CustomListTile extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return ListTile(
-      title: Text(item.title),
-      subtitle: Text(item.subtitle),
-      leading: Icon(item.icon, color: colors.primary),
-      trailing: Icon(Icons.chevron_right, color: colors.primary),
-      onTap: () => Navigator.pushNamed(context, item.link),
-    );
+        title: Text(item.title),
+        subtitle: Text(item.subtitle),
+        leading: Icon(item.icon, color: colors.primary),
+        trailing: Icon(Icons.chevron_right, color: colors.primary),
+        onTap: () {
+          // Navigator.pushNamed(context, item.link);
+          context.go(item.link);
+        });
   }
 }

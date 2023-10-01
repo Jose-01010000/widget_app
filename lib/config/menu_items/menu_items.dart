@@ -50,4 +50,10 @@ const appMenuItem = <MenuItem>[
     link: '/ui-controls',
     icon: Icons.settings,
   ),
+  MenuItem(
+    title: 'Tutorial',
+    subtitle: 'Tutorial de la app.',
+    link: '/tutorial',
+    icon: Icons.school,
+  ),
 ];
